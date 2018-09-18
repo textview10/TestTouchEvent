@@ -9,24 +9,27 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 /**
- * Created by xu.wang on 2018/9/17/ 22:15.
+ * Created by xu.wang
+ * Date on  2018/9/17 22:16:32.
+ *
+ * @Desc
  */
 
-public class DragerCViewGroup extends RelativeLayout {
+public class DragCViewGroup extends RelativeLayout {
     private static final String TAG = "CViewGroup";
     private ViewDragHelper mHelper;
     private boolean isTop = false;
-    private DragerBViewGroup dragerBViewGroup;
+    private DragBViewGroup dragBViewGroup;
 
-    public DragerCViewGroup(Context context) {
+    public DragCViewGroup(Context context) {
         this(context, null);
     }
 
-    public DragerCViewGroup(Context context, AttributeSet attrs) {
+    public DragCViewGroup(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public DragerCViewGroup(Context context, AttributeSet attrs, int defStyleAttr) {
+    public DragCViewGroup(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initialView();
     }
@@ -34,7 +37,7 @@ public class DragerCViewGroup extends RelativeLayout {
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
-        dragerBViewGroup = (DragerBViewGroup) getChildAt(0);
+        dragBViewGroup = (DragBViewGroup) getChildAt(0);
     }
 
     private void initialView() {
@@ -50,7 +53,7 @@ public class DragerCViewGroup extends RelativeLayout {
 ////            return super.onInterceptTouchEvent(ev);
 //            return false; //分发到子View
 //        }
-        if (ev.getAction() == MotionEvent.ACTION_DOWN && !dragerBViewGroup.isTop()){
+        if (ev.getAction() == MotionEvent.ACTION_DOWN && !dragBViewGroup.isTop()){
             return false;
         } else {
             return true;
@@ -82,7 +85,7 @@ public class DragerCViewGroup extends RelativeLayout {
 
         @Override
         public int clampViewPositionVertical(View child, int top, int dy) {
-            Log.e(TAG, "top = " + top);
+            Log.d(TAG, "top = " + top);
             if (top <= 0) {
                 isTop = true;
                 return 0;

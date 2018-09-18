@@ -9,12 +9,16 @@ import android.view.ViewGroup;
 import com.example.administrator.testtouchevent.R;
 
 /**
- * Created by xu.wang on 2018/9/17/ 23:21.
+ * Created by xu.wang
+ * Date on  2018/9/17 23:49:32.
  *
- * @Desc
+ * @Desc    使用ViewDragHelper去测试触摸事件
+ *          ViewDragHelper必须收到 ACTION_DOWN才可以执行拖拽逻辑,
+ *          所以现在 AView被拖拽到 BViewGroup的上方后,必须松开按下的手指,
+ *          再执行一次ACTION_DOWN才可以继续移动.
  */
 
-public class ViewDragerHelpActivity extends AppCompatActivity {
+public class ViewDragHelpActivity extends AppCompatActivity {
 
     private View aView;
     private ViewGroup bViewGroup, cViewGroup;

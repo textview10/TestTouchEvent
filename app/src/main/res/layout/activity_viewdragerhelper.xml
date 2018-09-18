@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.administrator.testtouchevent.ui.view.DragerCViewGroup
+    <com.example.administrator.testtouchevent.ui.view.DragCViewGroup
         android:id="@+id/viewgroup_c"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary">
 
-        <com.example.administrator.testtouchevent.ui.view.DragerBViewGroup
+        <com.example.administrator.testtouchevent.ui.view.DragBViewGroup
             android:id="@+id/viewgroup_b"
             android:layout_width="match_parent"
             android:layout_height="160dp"
@@ -22,6 +22,6 @@
                 android:layout_height="80dp"
                 android:layout_alignParentBottom="true"
                 android:background="@android:color/holo_green_dark" />
-        </com.example.administrator.testtouchevent.ui.view.DragerBViewGroup>
-    </com.example.administrator.testtouchevent.ui.view.DragerCViewGroup>
+        </com.example.administrator.testtouchevent.ui.view.DragBViewGroup>
+    </com.example.administrator.testtouchevent.ui.view.DragCViewGroup>
 </RelativeLayout>

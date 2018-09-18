@@ -9,24 +9,27 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 /**
- * Created by xu.wang on 2018/9/17 22:05.
+ * Created by xu.wang
+ * Date on  2018/9/17 22:06:32.
+ *
+ * @Desc
  */
 
-public class DragerBViewGroup extends RelativeLayout {
+public class DragBViewGroup extends RelativeLayout {
     private static final String TAG = "BViewGroup";
     private boolean isTop = false;  //是否到达顶部
 
     private ViewDragHelper mHelper;
 
-    public DragerBViewGroup(Context context) {
+    public DragBViewGroup(Context context) {
         this(context, null);
     }
 
-    public DragerBViewGroup(Context context, AttributeSet attrs) {
+    public DragBViewGroup(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public DragerBViewGroup(Context context, AttributeSet attrs, int defStyleAttr) {
+    public DragBViewGroup(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initialView();
     }
@@ -45,7 +48,7 @@ public class DragerBViewGroup extends RelativeLayout {
     public boolean onTouchEvent(MotionEvent event) {
         if (isTop){
             Log.e(TAG,"request false" );
-            getParent().requestDisallowInterceptTouchEvent(false);
+//            getParent().requestDisallowInterceptTouchEvent(false);
         } else {
             Log.e(TAG,"request true");
             getParent().requestDisallowInterceptTouchEvent(true);
